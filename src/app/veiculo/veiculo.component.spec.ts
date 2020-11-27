@@ -15,9 +15,12 @@ describe('VeiculoComponent', () => {
   beforeEach(() => {
 
     fakeVeiculos = [
-      {},
-      {},
-      {}
+      {_id: 'ff12376876', veiculo: 'Fiesta', marca: 'Ford', ano: 2010, descricao: 'Itens básicos',
+        vendido: false, created: '2010-11-10 09:00:00', updated: '2010-12-21 08:07:54'},
+      {_id: 'fk76575685', veiculo: 'Ka', marca: 'Ford', ano: 2010, descricao: 'Itens básicos',
+      vendido: false, created: '2010-11-10 09:00:00', updated: '2010-12-21 08:07:54'},
+      {_id: 'vg12312312', veiculo: 'Gol', marca: 'Volkswagen', ano: 2010, descricao: 'Itens básicos',
+      vendido: false, created: '2010-11-10 09:00:00', updated: '2010-12-21 08:07:54'}
     ]
 
     mockDataService = jasmine.createSpyObj(['getVeiculos']);
@@ -36,12 +39,10 @@ describe('VeiculoComponent', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should have a title Veiculos', () => {
-    expect(fixture.componentInstance.title).toEqual('Veículos');
-  });
-
-  it('should have a p element', () => {
-    expect(fixture.nativeElement.querySelector('p').textContent).toContain('Veículos');
+  it('should have a (h3 - Não-vendidos) element', () => {
+    mockDataService.getVeiculos.and.returnValue(of(fakeVeiculos));
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('h3').textContent).toContain('Não-vendidos');
   });
 
   it('should have called getVeiculos() once', () => {
@@ -62,7 +63,7 @@ describe('VeiculoComponent', () => {
     mockDataService.getVeiculos.and.returnValue(of(fakeVeiculos));
     fixture.detectChanges();
 
-    let trCollection = fixture.debugElement.queryAll(By.css('tr'));
+    let trCollection = fixture.debugElement.queryAll(By.css('tbody tr'));
     expect(trCollection.length).toBe(3);
   });
 
