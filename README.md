@@ -7,6 +7,9 @@ Atendendo parte dos requisitos, a saber:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
+## Screenshot
+![alt text](screenshot.jpg "Frontend para questão 5")
+
 ## Execução
 
 Você vai precisar do projeto de back-end em Node.js [questao5-backend](https://github.com/marcelosantosferreira/tn-questao5-backend)
