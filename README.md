@@ -7,12 +7,14 @@ Atendendo parte dos requisitos, a saber:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
-## Development server
+## Execução
 
-Visite o repositório com o projeto de back-end em Node.js [questao5-backend]()URL
-Após iniciar o serviço REST, inicie o front-end com 
-`ng serve --o`. O endereço é `http://localhost:4200/`
+Você vai precisar do projeto de back-end em Node.js [questao5-backend](https://github.com/marcelosantosferreira/tn-questao5-backend)
 
-## Running unit tests
+Após iniciar o serviço REST, inicie o front-end com `ng serve --o`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Execução dos unit tests
+
+Elaborei alguns testes do template/view (integration tests).
+
+Utilize `ng test`.
