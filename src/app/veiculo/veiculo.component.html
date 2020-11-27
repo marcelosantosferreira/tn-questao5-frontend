@@ -1,6 +1,14 @@
-<h2>Veículos</h2>
+<h3>Não-vendidos: {{quantidadeVeiculosNaoVendidos}}</h3>
 
-<p>Não-vendidos: {{quantidadeVeiculosNaoVendidos}}</p>
+<div #divErro class="alert alert-danger" [hidden]="!algumErro">
+  {{mensagemDeErro}}
+  <p><a href='#' (click)="(divErro.hidden = true)">fechar</a></p>
+</div>
+
+<div #divInfo class="alert alert-info" [hidden]="!exibirInfo">
+  {{mensagemDeExclusao}}
+  <p><a href='#' (click)="(divInfo.hidden = true)">fechar</a></p>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -26,7 +34,7 @@
     <td>{{ v.vendido }}</td>
     <td>{{ v.created }}</td>
     <td>{{ v.updated }}</td>
-    <td><a href=''>excluir</a></td>
+    <td><a href='#' (click)="excluirVeiculo(v)">excluir</a></td>
   </tr>
   </tbody>
 </table>
