@@ -1,1 +1,11 @@
-<app-album></app-album>
+<nav class='navbar navbar-expand navbar-light bg-light'>
+  <a class='navbar-brand'>{{pageTitle}}</a>
+  <ul class='nav nav-pills'>
+    <li><a class='nav-link' href=''>Não-vendidos</a></li>
+    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/form-pre']">Form-pre</a></li>
+    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/form-out']">Form-out</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <app-veiculos></app-veiculos>
+</div>

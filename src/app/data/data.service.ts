@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { IAlbum } from '../album';
+import { IVeiculo } from '../veiculo';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +9,13 @@ import { IAlbum } from '../album';
 export class DataService {
 
   constructor(private http: HttpClient) {
-
   }
 
-  getAlbums():Observable<IAlbum[]>{
-    return this.http.get<IAlbum[]>('https://jsonplaceholder.typicode.com/photos');
+  getVeiculos():Observable<IVeiculo[]>{
+    return this.http.get<IVeiculo[]>('http://localhost:4000/veiculos');
+  }
+
+  getVeiculosNaoVendidos():Observable<IVeiculo[]>{
+    return this.http.get<IVeiculo[]>('http://localhost:4000/veiculos?vendido=false');
   }
 }
